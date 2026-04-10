@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Analysis Dashboard | Expert View</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container" style="padding: 0;">
+            <h1>Observatoire de la Résilience Forestière</h1>
+            <p class="subtitle">Système Expert de Monitoring Spatio-Temporel des Écosystèmes Arborescents</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Lot Selection -->
+        <div class="lot-selector-tabs" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+            <button class="lot-btn active" data-lot="lot1">Parcel Group 1 (Lot 1)</button>
+            <button class="lot-btn" data-lot="lot2">Parcel Group 2 (Lot 2)</button>
+        </div>
+
+        <!-- Selection Controls -->
+        <div class="controls">
+            <label for="zone-selector">Sélectionner une zone d'étude :</label>
+            <select id="zone-selector"></select>
+            <div style="flex-grow: 1; text-align: right;">
+                <span style="font-size: 0.8rem; color: #a0a0a0;">Données synchronisées avec le rapport d'expertise</span>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <!-- Row 1: Original Comparison -->
+            <div class="analysis-row">
+                <h2 class="section-title">1. Observations Satellitaires Originales</h2>
+                <div class="image-comparison">
+                    <div class="card">
+                        <div class="image-container">
+                            <img id="img-t0" src="" alt="t0">
+                            <div class="img-label">Date Initiale (t0)</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image-container">
+                            <img id="img-t1" src="" alt="t1">
+                            <div class="img-label">Date Finale (t1)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Segmentation Comparison -->
+            <div class="analysis-row">
+                <h2 class="section-title">2. Zonage Phytosociologique et Identification de la Canopée</h2>
+                <div class="image-comparison">
+                    <div class="card">
+                        <div class="image-container">
+                            <img id="mask-t0" src="" alt="mask t0">
+                            <div class="img-label">Indice de Cover-Mass (Canopée t0)</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image-container">
+                            <img id="mask-t1" src="" alt="mask t1">
+                            <div class="img-label">Indice de Cover-Mass (Canopée t1)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Result and Stats -->
+            <div class="analysis-row">
+                <h2 class="section-title">3. Évaluation Écologique et Bilan Biomasse</h2>
+                <div class="final-result">
+                    <div class="card">
+                        <div class="image-container" style="aspect-ratio: auto; height: 700px;">
+                            <img id="change-map" src="" alt="change map" style="object-fit: contain;">
+                            <div class="img-label">Cartographie de l'Anthropisation et Succession Écologique</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card stats-card">
+                        <div class="stat-item">
+                            <span class="stat-label">Surface Initiale (Canopée t0)</span>
+                            <span class="stat-value" id="stat-t0">---</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Surface Finale (Canopée t1)</span>
+                            <span class="stat-value" id="stat-t1">---</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Gradient de Perte de Carbone (Delta Biomasse)</span>
+                            <span class="stat-value" id="stat-loss" style="color: #ff5252;">---</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Indice de Résilience Écosystémique</span>
+                            <div id="verdict-badge" class="verdict-badge">---</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Technical Methodology -->
+            <div class="analysis-row">
+                <h2 class="section-title">4. Protocole d'Audit et Validation des Capteurs</h2>
+                <div class="card" style="padding: 2rem; background: rgba(0,0,0,0.3);">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                        <div>
+                            <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Traitement du Signal Signal</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Réduction spectrale par <strong>Noyau Gaussien 3x3</strong> et optimisation radiométrique via <strong>CLAHE</strong> pour palier aux variations d'albédo.</p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Zonage Phytosociologique</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Classification non-supervisée par <strong>K-Means Centroids</strong> sur vecteurs multispectraux hybridés (RGB-HSV-Green Ratio).</p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Intégrité Spatiale</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Filtrage morphologique de type <strong>Élément Structurant Rectangulaire</strong> garantissant la continuité des lisières forestières.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+:root {
+    --primary: #2d5a27;
+    --primary-light: #4c9a41;
+    --accent: #d4e157;
+    --bg-dark: #0f160f;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --danger: #ff5252;
+    --warning: #ffb74d;
+    --success: #81c784;
+    --info: #64b5f6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #1b2e1b 0%, #0f160f 100%);
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #81c784, #d4e157);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Controls */
+.controls {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+select {
+    padding: 0.8rem 1.5rem;
+    background: #1b2e1b;
+    color: white;
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+select:hover {
+    box-shadow: 0 0 15px rgba(129, 199, 132, 0.3);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.analysis-row {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--primary-light);
+}
+
+.image-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.final-result {
+    grid-template-columns: 3fr 1fr;
+    display: grid;
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 1rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.img-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Stats Card */
+.stats-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.verdict-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Specific colors */
+.bg-critique { background: var(--danger); }
+.bg-deforestation { background: var(--warning); color: black; }
+.bg-stable { background: var(--success); color: black; }
+.bg-revegetalisation { background: var(--info); }
+
+/* Lot Selection */
+.lot-selector-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.lot-btn {
+    padding: 1rem 2rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.lot-btn:hover {
+    border-color: var(--primary-light);
+    color: white;
+}
+
+.lot-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(76, 154, 65, 0.4);
+}
