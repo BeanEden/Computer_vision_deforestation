@@ -1,0 +1,10 @@
+surface_t0,surface_t1,loss_percentage,image,Verdict
+248602,282541,-13.651941657750138,train_106.png,Résilience Écosystémique (Stable)
+314010,331574,-5.593452437820452,train_112.png,Résilience Écosystémique (Stable)
+315100,315100,0.0,train_118.png,Résilience Écosystémique (Stable)
+202961,352785,-73.8191081045127,train_128.png,Succession Écologique (Régénération)
+212605,248330,-16.803461818865973,train_131.png,Succession Écologique (Régénération)
+178985,279080,-55.92368075537056,train_136.png,Succession Écologique (Régénération)
+224378,207997,7.300626621148242,train_158.png,Anthropisation Avérée
+344534,445348,-29.260972792235307,train_174.png,Succession Écologique (Régénération)
+497696,617247,-24.020888253070147,train_197.png,Succession Écologique (Régénération)

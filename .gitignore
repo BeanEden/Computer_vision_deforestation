@@ -38,12 +38,6 @@ env/
 *.swp
 *.swo
 
-# Project specific
-outputs/lot1/*
-outputs/lot2/*
-!outputs/lot1/.gitkeep
-!outputs/lot2/.gitkeep
-
 # System files
 .DS_Store
 Thumbs.db
