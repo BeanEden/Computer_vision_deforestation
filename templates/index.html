@@ -73,52 +73,52 @@
 
             <!-- Row 3: Result and Stats -->
             <div class="analysis-row">
-                <h2 class="section-title">3. Évaluation Écologique et Bilan Biomasse</h2>
+                <h2 class="section-title">3. Bilan de Résilience Écosystémique et Puits de Carbone</h2>
                 <div class="final-result">
                     <div class="card">
                         <div class="image-container" style="aspect-ratio: auto; height: 700px;">
                             <img id="change-map" src="" alt="change map" style="object-fit: contain;">
-                            <div class="img-label">Cartographie de l'Anthropisation et Succession Écologique</div>
+                            <div class="img-label">Cartographie de la Fragmentation et Succession Écologique</div>
                         </div>
                     </div>
                     
                     <div class="card stats-card">
                         <div class="stat-item">
-                            <span class="stat-label">Surface Initiale (Canopée t0)</span>
+                            <span class="stat-label">Stock Initial (Indice de Canopée t0)</span>
                             <span class="stat-value" id="stat-t0">---</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-label">Surface Finale (Canopée t1)</span>
+                            <span class="stat-label">Stock Résiduel (Indice de Canopée t1)</span>
                             <span class="stat-value" id="stat-t1">---</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-label">Gradient de Perte de Carbone (Delta Biomasse)</span>
+                            <span class="stat-label">Dérive de Biomasse (Taux d'Anthropisation)</span>
                             <span class="stat-value" id="stat-loss" style="color: #ff5252;">---</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-label">Indice de Résilience Écosystémique</span>
+                            <span class="stat-label">État de Régénération Forestière</span>
                             <div id="verdict-badge" class="verdict-badge">---</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 4: Technical Methodology -->
+            <!-- Row 4: Forest Dynamics Interpretation -->
             <div class="analysis-row">
-                <h2 class="section-title">4. Protocole d'Audit et Validation des Capteurs</h2>
+                <h2 class="section-title">4. Interprétation de la Dynamique Forestière</h2>
                 <div class="card" style="padding: 2rem; background: rgba(0,0,0,0.3);">
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
                         <div>
-                            <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Traitement du Signal Signal</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Réduction spectrale par <strong>Noyau Gaussien 3x3</strong> et optimisation radiométrique via <strong>CLAHE</strong> pour palier aux variations d'albédo.</p>
+                            <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Normalisation de l’Albédo</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Ajustement des variations de réflectance pour standardiser le <strong>Couvert Forestier</strong> et corriger les ombres portées.</p>
                         </div>
                         <div>
                             <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Zonage Phytosociologique</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Classification non-supervisée par <strong>K-Means Centroids</strong> sur vecteurs multispectraux hybridés (RGB-HSV-Green Ratio).</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Identification automatique des <strong>Strates de Végétation</strong> par IA multispectrale (isole la forêt primaire du sol nu).</p>
                         </div>
                         <div>
-                            <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Intégrité Spatiale</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Filtrage morphologique de type <strong>Élément Structurant Rectangulaire</strong> garantissant la continuité des lisières forestières.</p>
+                            <h3 style="color: var(--primary-light); margin-bottom: 0.5rem;">Intégrité des Massifs</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Consolidation géométrique des <strong>Lisières</strong> pour assurer une évaluation précise de la fragmentation forestière.</p>
                         </div>
                     </div>
                 </div>
