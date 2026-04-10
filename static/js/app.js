@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
         verdictEl.className = 'verdict-badge';
         
         const v = data.Verdict.toLowerCase();
-        if (v === 'critique') verdictEl.classList.add('bg-critique');
-        else if (v === 'déforestation') verdictEl.classList.add('bg-deforestation');
-        else if (v === 'stable') verdictEl.classList.add('bg-stable');
-        else if (v === 'revégétalisation') verdictEl.classList.add('bg-revegetalisation');
+        if (v.includes('rupture')) verdictEl.classList.add('bg-critique');
+        else if (v.includes('anthropisation')) verdictEl.classList.add('bg-deforestation');
+        else if (v.includes('résilience')) verdictEl.classList.add('bg-stable');
+        else if (v.includes('succession')) verdictEl.classList.add('bg-revegetalisation');
     }
 
     // Initial load

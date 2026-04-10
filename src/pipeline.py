@@ -15,21 +15,21 @@ def categorize_loss(val: float) -> str:
     """Categorizes the environmental impact based on the loss percentage.
     
     Thresholds:
-        - > 20%: Critique (Severe deforestation)
-        - > 0%: Déforestation (Active loss)
-        - > -15%: Stable (Ecosystem resilience)
-        - else: Revégétalisation (Secondary succession)
+        - > 20%: Rupture d'Intégrité (Critique)
+        - > 0%: Anthropisation Avérée
+        - > -15%: Résilience Écosystémique (Stable)
+        - else: Succession Écologique (Régénération)
 
     Args:
         val: Loss percentage (positive means loss).
 
     Returns:
-        A clinical diagnostic label.
+        A clinical diagnostic label based on forestry standards.
     """
-    if val > 20: return 'Critique'
-    if val > 0: return 'Déforestation'
-    if val > -15: return 'Stable'
-    return 'Revégétalisation'
+    if val > 20: return "Rupture d'Intégrité (Critique)"
+    if val > 0: return 'Anthropisation Avérée'
+    if val > -15: return 'Résilience Écosystémique (Stable)'
+    return 'Succession Écologique (Régénération)'
 
 def run_expert_zone_analysis(p0: str, p1: str, name: str, lot_id: str = 'lot1', k: int = 3) -> Dict[str, Any]:
     """Executes the full automated image processing pipeline for a single study zone.
@@ -59,9 +59,7 @@ def run_expert_zone_analysis(p0: str, p1: str, name: str, lot_id: str = 'lot1', 
     
     # --- S2: Prétraitement et Filtrage ---
     img_gauss = pre.denoise_image(img_a, method='gaussian', kernel_size=3)
-    img_med = pre.denoise_image(img_a, method='median', kernel_size=3)
     psnr_gauss = cv2.PSNR(img_a, img_gauss)
-    psnr_med = cv2.PSNR(img_a, img_med)
     
     img_a_p = pre.preprocess(img_a)
     img_b_p = pre.preprocess(img_b)
