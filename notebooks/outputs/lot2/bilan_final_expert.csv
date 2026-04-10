@@ -1,0 +1,10 @@
+surface_t0,surface_t1,loss_percentage,image,Verdict
+248601,282446,-13.614184979143285,train_106.png,Stable
+313848,331569,-5.646363844918559,train_112.png,Stable
+315047,315047,0.0,train_118.png,Stable
+202940,354005,-74.43825761308761,train_128.png,Revégétalisation
+212395,248149,-16.8337296075708,train_131.png,Revégétalisation
+178984,279069,-55.91840611451303,train_136.png,Revégétalisation
+224364,208046,7.273002799023017,train_158.png,Déforestation
+344709,438687,-27.262995744236445,train_174.png,Revégétalisation
+497977,617201,-23.94166798868221,train_197.png,Revégétalisation
