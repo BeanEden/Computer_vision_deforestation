@@ -1,4 +1,5 @@
 import os
+import shutil
 import cv2
 import pandas as pd
 import numpy as np
@@ -159,5 +160,13 @@ Fichier généré automatiquement pour validation par l'équipe technique.
 """
     with open(audit_path, 'w', encoding='utf-8') as f:
         f.write(audit_content)
+    ##--- S6: Export de traçabilité (.outputs) ---
+    # On duplique chaque fichier généré pour la traçabilité externe
+    for filename in os.listdir(lot_dir):
+        # On évite de dupliquer les fichiers déjà en .outputs
+        if not filename.endswith('.outputs'):
+            src_file = os.path.join(lot_dir, filename)
+            dst_file = os.path.join(lot_dir, filename + '.outputs')
+            shutil.copy2(src_file, dst_file)
     
     return df
